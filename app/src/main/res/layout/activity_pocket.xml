@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGreyLight"
+    tools:context=".WalletActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/TitleToolbarStyle"
+                android:text="@string/Pocket" />
+
+            <ImageView
+                android:id="@+id/imgWalletBack"
+                style="@style/BackIconStyle" />
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:id="@+id/yourBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_bar"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/yourBalance" />
+
+    <ImageView
+        android:id="@+id/shapePocket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/yourBalance"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/shape_pocket" />
+
+    <TextView
+        android:id="@+id/tvBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tvPocketCurrencyType"
+        android:layout_centerHorizontal="true"
+        android:text="20"
+        android:gravity="bottom"
+        android:layout_alignTop="@id/shapePocket"
+        android:textSize="66sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvPocketCurrencyType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/shapePocket"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="SR"
+        android:textColor="#A6A6A6"
+        android:textSize="37sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/layoutByPayPal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="15dp"
+        android:background="@drawable/bg_by_paypal">
+
+        <TextView
+            android:id="@+id/byPayPal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="100dp"
+            android:text="@string/byPaypal" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_pay_selected_pal" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/btnByCredit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_above="@id/layoutByPayPal"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/bg_by_credit">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="100dp"
+            android:text="@string/byCredit"
+            android:textColor="@android:color/white" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_pay_selected_credit" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnByCredit"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:text="@string/chargeYourBalance" />
+</RelativeLayout>

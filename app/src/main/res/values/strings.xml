@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">CAB10</string>
+
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_home">Map</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!--splash activity-->
+    <string name="letsGo">Let\'s Go</string>
+    <string name="selectLang">Choose Language</string>
+    <string name="ar">Arabic</string>
+    <string name="english">English</string>
+    <string name="tvLanguage">English</string>
+
+    <!--sign in activity-->
+    <string name="signIn">Sign In</string>
+    <string name="emailMobileNo">Email Address \\ Mobile No.</string>
+    <string name="password">Password</string>
+    <string name="forgetPassword">Forget Password?</string>
+    <string name="enter">Enter</string>
+    <string name="newUser">New User?</string>
+    <string name="or">or</string>
+    <string name="continueWithFB">continue with facebook</string>
+    <string name="continueWithGoogle">continue with google plus</string>
+
+    <!-- sign up activity-->
+    <string name="theSignUp">Sign Up</string>
+    <string name="signUp">Sign Up</string>
+    <string name="haveAnAccount">Have Account?</string>
+    <string name="phoneNumber">Phone Number</string>
+    <string name="theName">Name</string>
+    <string name="Email">Email</string>
+
+
+    <!--complete sign up dialog-->
+    <string name="completeSignupMsg">Enter code that sent to your mobile</string>
+    <string name="change">Change</string>
+    <string name="completeSignup">Complete Registration</string>
+    <string name="didntRecieveCode">didn\'t receive code?</string>
+    <string name="resendCode">Resend code?</string>
+
+    <!--home activity map-->
+    <string name="confirmPickUp">Confirm Pickup</string>
+    <string name="carCat">Car Category</string>
+    <string name="driverGender">Driver Gender</string>
+    <string name="add">Add</string>
+    <string name="scheduleTrip">Schedule Trip</string>
+
+    <!--nav drawer-->
+    <string name="navMain">Main</string>
+    <string name="navHelp">Help</string>
+    <string name="navFreeTrips">Free Trips</string>
+    <string name="navWallet">Wallet</string>
+    <string name="navYourTrips">Trips</string>
+    <string name="navLogout">Logout</string>
+
+    <!--your trips activity-->
+    <string name="yourTrips">Trips</string>
+    <string name="upcomingTrips">upcoming</string>
+    <string name="previousTrips">previous</string>
+
+    <!--pocket activity-->
+    <string name="Pocket">Pocket</string>
+    <string name="yourBalance">your balance</string>
+    <string name="byCredit">by your credit card</string>
+    <string name="byPaypal">by Paypal</string>
+    <string name="chargeYourBalance">charge your balance</string>
+
+    <!--order details activity-->
+    <string name="totalDrivePrice">Total drive price</string>
+    <string name="kiloMeter">(km)</string>
+    <string name="taxiService">service tax</string>
+    <string name="BokkingFees">booking fees</string>
+    <string name="MainPrice">basic price</string>
+    <string name="MinimumWage">minimum wage</string>
+    <string name="crossedDistance">traveled distance</string>
+    <string name="driveDuration">drive duration</string>
+    <string name="minute">(minute)</string>
+    <string name="saudiRial">(RS)</string>
+    <string name="orderDetails">Order Details</string>
+
+</resources>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layoutMarginMap"
+        app:cardCornerRadius="@dimen/cardCornerRadius">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgTime"
+                style="@style/CardImgStyle1"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/schedule_orange" />
+
+            <TextView
+                android:id="@+id/tvOrderTime"
+                style="@style/CardTextStyle1"
+                android:layout_toLeftOf="@id/imgTime"
+                android:text="12/12/2019, 10:03 pm" />
+
+            <View
+                android:id="@+id/v1"
+                style="@style/CardLineVerStyle"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:id="@+id/imgWheel"
+                style="@style/CardImgStyle1"
+                android:layout_toLeftOf="@id/v1"
+                android:src="@drawable/wheel_orange" />
+
+            <TextView
+                android:id="@+id/tvOrderCarType"
+                style="@style/CardTextStyle1"
+                android:layout_toLeftOf="@id/imgWheel"
+                android:text="Regular XL" />
+
+            <View
+                android:id="@+id/v2"
+                style="@style/CardLineVerStyle"
+                android:layout_toRightOf="@id/tvPrice" />
+
+            <TextView
+                android:id="@+id/tvPrice"
+                style="@style/CardTextStyle1"
+                android:layout_marginRight="@dimen/margin_card_start"
+                android:layout_toRightOf="@id/currencyType"
+                android:text="5"
+                android:textColor="@color/colorGreen"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/currencyType"
+                style="@style/CardTextStyle1"
+                android:layout_alignBottom="@id/imgWheel"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/margin_card_start"
+                android:layout_marginRight="4dp"
+                android:text="SR" />
+
+            <View
+                android:id="@+id/topHorLine"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dividerSize"
+                android:layout_below="@id/imgTime"
+                android:background="@color/greyDivider" />
+
+            <ImageView
+                android:id="@+id/imgFirstPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/tvFirstPoint"
+                android:layout_alignBottom="@id/tvFirstPoint"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/margin_card_start"
+                android:src="@drawable/oval_bordered" />
+
+            <FrameLayout
+                android:id="@+id/routeLine"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_above="@id/imgEndPoint"
+                android:layout_below="@id/imgFirstPoint"
+                android:layout_alignStart="@id/imgFirstPoint"
+                android:layout_alignEnd="@id/imgFirstPoint">
+
+                <View
+                    android:layout_width="@dimen/dividerSize"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/greyDivider" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/imgEndPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/tvEndPoint"
+                android:layout_alignBottom="@id/tvEndPoint"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/margin_card_start"
+                android:src="@drawable/oval_black" />
+
+            <TextView
+                android:id="@+id/tvFirstPoint"
+                style="@style/CardTextStyle2"
+                android:layout_below="@id/topHorLine"
+                android:text="شركة كابتن للخدمات اللوجيستية" />
+
+            <ImageView
+                android:id="@+id/v_h"
+                style="@style/DottedDividerStyle"
+                android:layout_below="@id/tvFirstPoint"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:layout_toLeftOf="@id/imgFirstPoint"
+                android:src="@drawable/dotted" />
+
+            <TextView
+                android:id="@+id/tvEndPoint"
+                style="@style/CardTextStyle2"
+                android:layout_below="@id/v_h"
+                android:layout_marginBottom="@dimen/margin_card_ver"
+                android:text="شركة كابتن للخدمات اللوجيستية" />
+
+            <TextView
+                android:id="@+id/tvDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/tvEndPoint"
+                android:layout_alignBottom="@id/tvEndPoint"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/margin_card_start"
+                android:gravity="center"
+                android:text="40 KM" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</FrameLayout>

@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">CAB10</string>
+
+    <string name="letsGo">هيا ننطلق</string>
+    <string name="selectLang">اختر اللغة</string>
+    <string name="ar">العربية</string>
+    <string name="english">الانجليزية</string>
+    <string name="tvLanguage">العربية</string>
+
+
+    <!--sign in activity-->
+    <string name="signIn">تسجيل الدخول</string>
+    <string name="emailMobileNo">البريد الالكتروني / رقم الهاتف</string>
+    <string name="password">كلمة المرور</string>
+    <string name="forgetPassword">نسيت كلمة المرور؟</string>
+    <string name="enter">دخول</string>
+    <string name="newUser">مستخدم جديد؟</string>
+    <string name="or">أو</string>
+    <string name="continueWithFB">استمرار عبر الفيسبوك</string>
+    <string name="continueWithGoogle">استمرار عبر جوجل بلس</string>
+
+    <!-- sign up activity-->
+    <string name="theSignUp">التسجيل</string>
+    <string name="signUp">تسجيل</string>
+    <string name="haveAnAccount">لديك حساب حالي؟</string>
+    <string name="phoneNumber">رقم الهاتف</string>
+    <string name="theName">الاسم</string>
+    <string name="Email">البريد الالكتروني</string>
+
+
+    <!--complete sign up dialog-->
+    <string name="completeSignupMsg">أدخل الكود المرسل إلى رقم الموبايل</string>
+    <string name="change">تغيير</string>
+    <string name="completeSignup">أكمل التسجيل</string>
+    <string name="didntRecieveCode">لم تستلم الكود؟</string>
+    <string name="resendCode">أعد إرسال الكود؟</string>
+
+    <!--home activity map-->
+    <string name="confirmPickUp">أكد نقطة الانطلاق</string>
+    <string name="carCat">فئة السيارة</string>
+    <string name="driverGender">جنس السائق</string>
+    <string name="add">أضف</string>
+    <string name="scheduleTrip">جدولة الرحلة</string>
+
+    <!--nav drawer-->
+    <string name="navMain">الرئيسية</string>
+    <string name="navHelp">اطلب المساعدة</string>
+    <string name="navFreeTrips">مشاوير مجانية</string>
+    <string name="navWallet">المحفظة</string>
+    <string name="navYourTrips">مشاويرك</string>
+    <string name="navLogout">تسجيل الخروج</string>
+
+
+    <!--your trips activity-->
+    <string name="yourTrips">مشاويرك</string>
+    <string name="upcomingTrips">قادمة</string>
+    <string name="previousTrips">سابقة</string>
+
+    <!--pocket activity-->
+    <string name="Pocket">المحفظة</string>
+    <string name="yourBalance">رصيدك</string>
+    <string name="byCredit">بواسطة بطاقتك الالكترونية</string>
+    <string name="byPaypal">بواسطة الـ Paypal</string>
+    <string name="chargeYourBalance">اشحن رصيدك</string>
+
+    <!--order details activity-->
+    <string name="totalDrivePrice">إجمالي سعر الرحلة</string>
+    <string name="kiloMeter">(كم)</string>
+    <string name="taxiService">ضريبة الخدمة</string>
+    <string name="BokkingFees">رسوم الحجز</string>
+    <string name="MainPrice">السعر الأساسي</string>
+    <string name="MinimumWage">الحد الأدنى للأجرة</string>
+    <string name="crossedDistance">المسافة المقطوعة</string>
+    <string name="driveDuration">وقت الرحلة</string>
+    <string name="minute">(دقيقة)</string>
+    <string name="saudiRial">(ر.س)</string>
+    <string name="orderDetails">تفاصيل الطلب</string>
+
+</resources>

@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/imgNavIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_nav" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="اختر نقطة الانطلاق"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/ic_chat" />
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_bar"
+        android:layout_margin="@dimen/layoutMarginMap"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="@dimen/cardCornerRadius">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="@dimen/cardPaddingV"
+            android:paddingRight="12dp"
+            android:paddingBottom="@dimen/cardPaddingV">
+
+
+            <ImageView
+                android:id="@+id/imgFirstPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/tvFirst"
+                android:layout_alignBottom="@id/tvFirst"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_first_point_1" />
+
+            <FrameLayout
+                android:id="@+id/routeLine"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_above="@id/imgEndPoint"
+                android:layout_below="@id/imgFirstPoint"
+                android:layout_alignStart="@id/imgFirstPoint"
+                android:layout_alignEnd="@id/imgFirstPoint"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="@dimen/dividerSize"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="#bebebe" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/imgEndPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/tvEnd"
+                android:layout_alignBottom="@id/tvEnd"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_first_point_2"
+                android:visibility="gone" />
+
+
+
+
+            <TextView
+                android:id="@+id/tvFirst"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="@dimen/textAddressMarginH"
+                android:layout_toLeftOf="@id/imgFirstPoint"
+                android:gravity="right"
+                android:text="شركة كابتن للخدمات اللوجيستية" />
+
+
+            <ImageView
+                android:id="@+id/v_h"
+                style="@style/DottedDividerStyle"
+                android:layout_below="@id/tvFirst"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/imgFirstPoint"
+                android:src="@drawable/dotted"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/v_h"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="@dimen/textAddressMarginH"
+                android:layout_toLeftOf="@id/imgFirstPoint"
+                android:layout_toRightOf="@id/tvDistance"
+                android:gravity="right"
+                android:text="شركة كابتن للخدمات اللوجيستية"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tvDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/v_h"
+                android:layout_alignTop="@id/tvEnd"
+                android:layout_alignBottom="@id/tvEnd"
+                android:layout_alignParentLeft="true"
+                android:text="40 KM"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardTripDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnReserveCar"
+        android:layout_marginStart="@dimen/layoutMarginMap"
+        android:layout_marginEnd="@dimen/layoutMarginMap"
+        android:clickable="true"
+        android:visibility="gone"
+        app:cardCornerRadius="@dimen/cardCornerRadius">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tvDriverGender"
+                        style="@style/colorTitleTripDetails"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/driverGender" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvDriverGender"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            style="@style/GenderRBStyle"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="ذكر" />
+
+                        <RadioButton
+                            style="@style/GenderRBStyle"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="أنثى" />
+                    </RadioGroup>
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/dashed_line_v" />
+
+                <RelativeLayout
+                    android:id="@+id/layoutChooseCarType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tvCarCategory"
+                        style="@style/colorTitleTripDetails"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="@string/carCat" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvCarCategory"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="regular xl" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_down_spinner" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <ImageView
+                style="@style/DottedDividerStyle"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dashed_line_h" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_trip_price"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+
+                    <TextView
+                        android:id="@+id/tvTripPrice"
+                        style="@style/colorTitleTripDetails"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="4 - 5"
+                        android:textColor="@color/colorGreen"
+                        android:textSize="@dimen/tripPriceSize" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tvCarCategory"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="ريال سعودي"
+                        android:textSize="8sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/dashed_line_v" />
+
+                <RelativeLayout
+                    android:id="@+id/layoutChoosePaymentWay"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvPaymentWay"
+                            style="@style/colorTitleTripDetails"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="2dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="طريقة الدفع" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="نقدي" />
+
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_down_spinner" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/dashed_line_v" />
+
+
+                <TextView
+                    android:id="@+id/tvAddPromoCode"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="1"
+                    android:drawableStart="@drawable/ic_plus"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:padding="12dp"
+                    android:text="أدخل برومو كود"
+                    android:textColor="@color/colorTitleTripDetails" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/layoutKeyboard"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@id/cardTripDetails"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btnAddPromo"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginStart="@dimen/btnAddPromoMarginH"
+            android:layout_marginTop="@dimen/btnAddPromoMarginV"
+            android:layout_marginEnd="@dimen/btnAddPromoMarginH"
+            android:layout_marginBottom="@dimen/btnAddPromoMarginV"
+            android:background="@drawable/bg_green_btn"
+            android:gravity="center"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="@string/add"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/txtAddPromoCode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:hint="أدخل الرمز الترويجي ( البروموكود )"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnReserveCar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/r">
+
+        <TextView
+            android:id="@+id/tvPickCarState"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="2dp"
+            android:layout_marginStart="35dp"
+            android:text="@string/confirmPickUp" />
+
+        <ImageView
+            android:id="@+id/imgScheduleTrip"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="25dp"
+            android:src="@drawable/ic_schedule_trip" />
+
+    </LinearLayout>
+
+    <com.skyfishjy.library.RippleBackground
+        android:id="@+id/pulse"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:rb_color="@color/colorAccent"
+        app:rb_duration="3000"
+        app:rb_radius="60dp"
+        app:rb_rippleAmount="4"
+        app:rb_scale="6">
+
+        <ImageView
+            android:id="@+id/imgWheel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/wheel" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgWheel"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="قيد الطلب"
+            android:textSize="18sp" />
+    </com.skyfishjy.library.RippleBackground>
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/layoutDriver"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:background="@android:color/transparent"-->
+    <!--android:visibility="gone">-->
+
+
+    <!--<FrameLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="20dp"-->
+    <!--android:background="@drawable/bg_top_curved">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginStart="112dp"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:text="اسم السائق"-->
+    <!--android:textSize="16sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginStart="112dp"-->
+
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<com.makeramen.roundedimageview.RoundedImageView-->
+    <!--android:layout_width="28dp"-->
+    <!--android:layout_height="28dp"-->
+    <!--android:src="@mipmap/ic_launcher_round"-->
+    <!--app:riv_corner_radius="14dp" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="مرسيدس بنز  2016 - أبيض"-->
+    <!--android:textColor="#7E7E7E" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginStart="112dp"-->
+
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<FrameLayout-->
+    <!--android:layout_width="28dp"-->
+    <!--android:layout_height="28dp"-->
+    <!--android:background="@drawable/bg_circle_grey">-->
+
+    <!--<com.makeramen.roundedimageview.RoundedImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:src="@drawable/ic_telephone"-->
+    <!--app:riv_corner_radius="14dp" />-->
+    <!--</FrameLayout>-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layoutDirection="ltr"-->
+    <!--android:text="009660000000"-->
+    <!--android:textColor="#7E7E7E" />-->
+
+    <!--<Button-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginStart="8dp"-->
+    <!--android:background="@drawable/bg_green_btn"-->
+    <!--android:text="اتصل"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:textSize="12sp" />-->
+    <!--</LinearLayout>-->
+
+    <!--<Button-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/btnMapHeight"-->
+    <!--android:layout_margin="20dp"-->
+    <!--android:elevation="8dp"-->
+    <!--android:text="إلغاء الرحلة" />-->
+    <!--</LinearLayout>-->
+    <!--</FrameLayout>-->
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="101dp"-->
+    <!--android:layout_alignParentTop="true">-->
+
+    <!--<com.makeramen.roundedimageview.RoundedImageView-->
+    <!--android:layout_width="82dp"-->
+    <!--android:layout_height="82dp"-->
+    <!--android:layout_marginStart="14dp"-->
+    <!--android:src="@mipmap/ic_launcher_round"-->
+    <!--app:riv_border_color="@color/colorPrimary"-->
+    <!--app:riv_border_width="@dimen/dividerSize"-->
+    <!--app:riv_corner_radius="41dp" />-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="38dp"-->
+    <!--android:layout_height="38dp"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:src="@drawable/ic_direct_msg" />-->
+    <!--</RelativeLayout>-->
+    <!--</RelativeLayout>-->
+
+</RelativeLayout>

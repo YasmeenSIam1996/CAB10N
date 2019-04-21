@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false"
+    tools:context=".SignUpActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:background="@drawable/app_bar_bg"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:gravity="center_vertical">
+
+            <TextView
+                style="@style/TitleToolbarStyle"
+                android:fontFamily="@font/swissra_medium"
+                android:text="@string/signUp" />
+
+            <ImageView
+                android:id="@+id/imgWalletBack"
+                style="@style/BackIconStyle" />
+        </RelativeLayout>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadingEdge="none"
+            android:paddingStart="@dimen/signInMarginH"
+            android:paddingEnd="@dimen/signInMarginH"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    style="@style/EditTextLayoutStyle"
+                    android:layout_marginTop="0dp">
+
+                    <FrameLayout
+
+                        android:layout_width="@dimen/editTextHeight"
+                        android:layout_height="@dimen/editTextHeight">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_profile" />
+                    </FrameLayout>
+
+                    <EditText
+                        style="@style/EditTextStyle"
+                        android:hint="@string/theName"
+                        android:inputType="textEmailAddress" />
+                </LinearLayout>
+
+
+                <LinearLayout style="@style/EditTextLayoutStyle">
+
+                    <FrameLayout
+
+                        android:layout_width="@dimen/editTextHeight"
+                        android:layout_height="@dimen/editTextHeight">
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_email" />
+                    </FrameLayout>
+
+                    <EditText
+                        style="@style/EditTextStyle"
+                        android:hint="@string/Email"
+                        android:inputType="textEmailAddress" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/EditTextLayoutStyle">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/editTextHeight"
+                        android:layout_height="@dimen/editTextHeight">
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/phone_call" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edit_text_bg">
+
+                        <EditText
+                            style="@style/EditTextStyle"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/phoneNumber"
+                            android:inputType="phone" />
+
+                        <com.hbb20.CountryCodePicker
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_ccp"
+                            android:background="@drawable/cc_piker_bg"
+                            app:ccp_defaultNameCode="SA"
+                            app:ccp_textSize="@dimen/ccpTextSize" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/EditTextLayoutStyle">
+
+                    <FrameLayout
+                        android:layout_width="@dimen/editTextHeight"
+                        android:layout_height="@dimen/editTextHeight">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_lock" />
+                    </FrameLayout>
+
+                    <EditText
+                        style="@style/EditTextStyle"
+                        android:hint="@string/password"
+                        android:inputType="textPassword" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/marginSignUpV3"
+                    android:text="@string/signUp" />
+
+                <TextView
+                    android:id="@+id/tvNewUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/marginSignUpV2"
+                    android:text="@string/haveAnAccount" />
+            </LinearLayout>
+        </ScrollView>
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="25dp">
+
+
+            <LinearLayout
+                android:id="@+id/layoutSocialMedia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/signInMarginH"
+                android:paddingEnd="@dimen/signInMarginH">
+
+                <ImageButton
+                    style="@style/BtnSocialStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/btnHeight"
+                    android:layout_marginEnd="@dimen/marginBtnSocialH"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_button_fb"
+                    android:src="@drawable/facebook_logo" />
+
+                <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/btnHeight"
+                    android:layout_marginStart="@dimen/marginBtnSocialH"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_button_google"
+                    android:src="@drawable/google_plus" />
+            </LinearLayout>
+        </FrameLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/main_logo"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|center_horizontal" />
+
+</android.support.design.widget.CoordinatorLayout>

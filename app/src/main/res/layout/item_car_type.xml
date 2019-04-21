@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="75dp"
+    android:layout_marginStart="16dp"
+    android:layout_height="wrap_content">
+
+    <!--<View-->
+        <!--android:id="@+id/viewRectangle"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_marginStart="0.5dp"-->
+        <!--android:layout_marginEnd="0.5dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_alignBottom="@id/layoutTexts"-->
+        <!--android:background="@drawable/bg_unselected_car_type" />-->
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/layoutTexts"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/viewOval"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginStart="0.5dp"-->
+        <!--android:layout_marginEnd="0.5dp"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="7dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="Regular XL"-->
+            <!--android:textColor="#0E0C0C" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvVehiclePrice"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="3dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="Regular XL"-->
+            <!--android:textColor="#2CAE1E"-->
+            <!--android:textSize="13sp" />-->
+
+
+    <!--</LinearLayout>-->
+
+
+    <!--<View-->
+        <!--android:id="@+id/viewOval"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="36dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:background="@drawable/btn_off_car_type" />-->
+
+
+</RelativeLayout>
